@@ -7,12 +7,10 @@ const choices = document.querySelectorAll(".choice");
 const userScorePara = document.querySelector("#user");
 const compScorePara = document.querySelector("#comp");
 
-// Function to prompt for the number of rounds
 const setRoundLimit = () => {
     roundLimit = parseInt(prompt("Enter the number of rounds to win the tournament"));
 };
 
-// Initialize the game by asking for the round limit
 setRoundLimit();
 
 const compId = () => {
@@ -25,11 +23,11 @@ const checkTournamentWinner = () => {
     if (userScore === roundLimit) {
         message.innerText = "Congratulations! You won the tournament!";
         message.style.backgroundColor = "green";
-        setTimeout(resetGame, 2000); // Wait 2 seconds before resetting the game
+        setTimeout(resetGame, 2000);
     } else if (compScore === roundLimit) {
         message.innerText = "You lost the tournament! Try again.";
         message.style.backgroundColor = "red";
-        setTimeout(resetGame, 2000); // Wait 2 seconds before resetting the game
+        setTimeout(resetGame, 2000);
     }
 };
 
@@ -38,8 +36,7 @@ const resetGame = () => {
     compScore = 0;
     userScorePara.innerText = userScore;
     compScorePara.innerText = compScore;
-    setTimeout(setRoundLimit, 500); // Ask for a new round limit after a short delay
-};
+    setTimeout(setRoundLimit, 500);
 
 const showWinner = (userWin) => {
     if (userWin) {
